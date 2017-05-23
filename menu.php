@@ -32,6 +32,23 @@
             width: 100%;
         }
     }
+    #progressBar {
+      width: 100%;
+      margin: 0px auto;
+      height: 22px;
+      background-color: #e2e2e2;
+      border-radius: 5px;
+    }
+
+    #progressBar div {
+      height: 100%;
+      text-align: middle;
+      padding: 0px;
+      line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+      width: 0;
+      background-color: #CBEA00;
+      border-radius: 5px;
+    }
     </style>
 
 </head>
@@ -185,8 +202,8 @@
                                   </div>
                                   <div class="media-body">
                                     <h5 class="media-heading" align="left">Upgrade Firewall Lv.2</h5>
-                                    <div class="progress">
-                                      <div class="progress-bar progress-bar-btn-lg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 65%;height: 25px;">
+                                    <div id="progressBar">
+                                      <div class="progress-bar progress-bar-btn-lg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="background-color: rgb(19, 108, 249); height: 100%;">
                                       </div>
                                     </div>
                                     <div align="left">
@@ -449,6 +466,18 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.js"></script>
+
+    <script>
+        function progress(timeleft, timetotal, $element) {
+        var progressBarWidth = timeleft * $element.width() / timetotal;
+        $element.find('div').animate({ width: (100 - progressBarWidth) }, 500).html(100-(timeleft / timetotal)*100 + "%");
+        if(timeleft > 0) {
+            setTimeout(function() { progress(timeleft - 1, timetotal, $element);},1000);
+        }
+    };
+    progress(8, 8, $('#progressBar'));
+
+    </script>
 
 </body>
 
