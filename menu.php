@@ -1,3 +1,4 @@
+<?php include_once "dbconf.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -234,22 +235,23 @@
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
                             <div class="modal-body">
-                                <h2>Project Title</h2>
+                                <h2>Bank</h2>
                                 <hr class="star-primary">
-                                <img class="img-fluid img-centered" src="img/portfolio/cake.png" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                                 <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
+                                    <li>
+                                        <div class="form-group">
+                                            <label for="bank"><h5>Bank Account ID :</h5></label>
+                                            <input type="text" class="form-control" id="bank">
+                                        </div>
                                     </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
+                                    <li>
+                                        <div class="form-group">
+                                            <label for="pwd"><h5>Bank Account PIN :</h5></label>
+                                            <input type="password" class="form-control" id="pwd">
+                                        </div>
                                     </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                    <li>
+                                         <button type="submit" class="btn btn-primary">ENTER</button>
                                     </li>
                                 </ul>
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -273,22 +275,22 @@
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
                             <div class="modal-body">
-                                <h2>Project Title</h2>
+                                <h2>SCAN IP</h2>
                                 <hr class="star-primary">
-                                <img class="img-fluid img-centered" src="img/portfolio/circus.png" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                                 <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                    <li><h5>Scan for IP :</h5>
+
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search IP">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                                </span>
+                                                <span style="padding-left: 20px;">
+                                                    <button class="btn btn-success" type="button">SCAN</button>
+                                                </span>
+                                                </span>
+                                            </div>
+
                                     </li>
                                 </ul>
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -312,24 +314,87 @@
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
                             <div class="modal-body">
-                                <h2>Project Title</h2>
+                                <h2>STORE</h2>
                                 <hr class="star-primary">
-                                <img class="img-fluid img-centered" src="img/portfolio/game.png" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                    </li>
-                                </ul>
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/firewall.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">Firewall</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Firewall level : 01 </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : 1000</strong></span> 
+                                        </div>
+                                        <div align="right">
+                                            <button class="btn btn-success" type="button">buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/bypasser.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">Bypasser</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Bypasser level : 01 </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : 2000</strong></span> 
+                                        </div>
+                                        <div align="right">
+                                            <button class="btn btn-success" type="button">buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/encrypter.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">encrypter</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Encrypter level : 01 </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : 500</strong></span> 
+                                        </div>
+                                        <div align="right">
+                                            <button class="btn btn-success" type="button">buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/decrypter.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">Decrypter</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Decrypter level : 01 </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : 1000</strong></span> 
+                                        </div>
+                                        <div align="right">
+                                            <button class="btn btn-success" type="button">buy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+
+
+                                
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>
@@ -468,14 +533,25 @@
     <script src="js/freelancer.js"></script>
 
     <script>
-        function progress(timeleft, timetotal, $element) {
+    
+    <?php $data = mysqli_query($con, "SELECT * FROM activity WHERE ip_attacker = '192.249.160.53'"); 
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+    }
+    ?>
+    var start = <?php echo $data->start; ?>
+    // console.log(start);
+    var end = <?php echo $data->end; ?>
+
+    function progress(timeleft, timetotal, $element) {
+        
         var progressBarWidth = timeleft * $element.width() / timetotal;
-        $element.find('div').animate({ width: (100 - progressBarWidth) }, 500).html(100-(timeleft / timetotal)*100 + "%");
+        $element.find('div').animate({ width: (progressBarWidth) }, 500).html(100-(timeleft / timetotal)*100 + "%");
         if(timeleft > 0) {
             setTimeout(function() { progress(timeleft - 1, timetotal, $element);},1000);
         }
     };
-    progress(8, 8, $('#progressBar'));
+    progress(15, 15, $('#progressBar'));
 
     </script>
 
