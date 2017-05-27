@@ -288,21 +288,24 @@
                                 <hr class="star-primary">
                                 <ul class="list-inline item-details">
                                     <li><h5>Scan for IP :</h5>
-
+                                    <form>
                                             <div class="input-group" style="padding-bottom: 25px;">
-                                                <input type="text" class="form-control" placeholder="Search IP">
+                                                <input id="find_ip" type="text" class="form-control" name="ip" placeholder="Search IP">
                                                 <span class="input-group-btn">
-                                                    <a href="ping.php"><button class="btn btn-default" type="button">PING</button></a>
+                                                    <button id="btn-ping" class="btn btn-default" type="button" name="act" value="2">PING</button>
                                                 </span>
                                                 <span style="padding-left: 20px;">
-                                                    <a href="scan.php"><button class="btn btn-success" type="button">SCAN</button></a>
+                                                    <button id="btn-scan" class="btn btn-success" type="button" name="act" value="1">SCAN</button></a>
                                                 </span>
                                                 </span>
                                             </div>
-
+                                    </form>
+<?php 
+    include 'scan.php'
+?>
 <div class="list-group col-sm-12" style="padding: 0px;">
   <div href="#" class="list-group-item"  style="text-align: left;"" >
-      <span class="col-sm-5"> IP Address : xxx.xxx.xxx.xxx</span>
+      <span class="col-sm-5" id="result_ip"> IP Address : <?php include_once 'scan.php'; echo $ipip; ?></span>
       <span class="col-sm-5"> Firewall lv : xx</span>
       <a href="bypass.php"> <button class="btn btn-danger">BYPASS</button> </a>
   </div>
@@ -600,9 +603,9 @@
         echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
     }
     ?>
-    var start = <?php echo $data->start; ?>
-    // console.log(start);
-    var end = <?php echo $data->end; ?>
+    // var start = <?php echo $data->start; ?>
+    // // console.log(start);
+    // var end = <?php echo $data->end; ?>
 
     function progress(timeleft, timetotal, $element) {
         
@@ -613,7 +616,36 @@
         }
     };
     progress(15, 15, $('#progressBar'));
+    </script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btn-scan").click(function(){
+                console.log("masuk coy");
+                var ip = $('#find_ip').val();
+                var dataString = 'ip='+ip;
+
+                if (ip=='') {
+                    console.log("IP Kosong!");
+                }
+                else {
+                    $.ajax({
+                        type: "POST",
+                        url: "scan.php",
+                        data: dataString,
+                        success: function(result){
+                            console.log("sukses");
+                            console.log(result);
+                            $('#result_ip').html("IP Address: " + result);
+                        },
+                        fail: function() {
+                            console.log("gagal");
+                        }
+
+                    })
+                }
+            });
+        });
     </script>
 
 </body>
