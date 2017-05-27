@@ -10,17 +10,17 @@ $username=$_SESSION['login_user'];
 
 $ip=$_POST['ip'];
 
-echo $ip;
+/*echo $ip;*/
 
 // if ( isset($ip)) {
 //     echo "<script> alert("masukkan IP")</script>"
 // }
 
-$hasil=mysqli_query($bd,"SELECT ip_address FROM users where ip_address = '$ip'") or die(mysql_error($bd));
+$hasil=mysqli_query($bd,"SELECT ip_address, firewall_lvl FROM users where ip_address = '$ip'") or die(mysql_error($bd));
 
 $fetched=mysqli_fetch_array($hasil);
 $ipip = $fetched['ip_address'];
-
+echo $ipip;
 // if(!isset($fetched)){
 // 	echo '<div class="list-group col-sm-12" style="padding: 0px;">';
 //     echo '<div href="#" class="list-group-item"  style="text-align: left;">';

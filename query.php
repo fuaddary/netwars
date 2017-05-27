@@ -9,6 +9,7 @@
      $level_bypasser= $fetched['bypasser_lvl'];
      $level_encryptor= $fetched['encrypter_lvl'];
      $level_decryptor= $fetched['pw_cracker_lvl'];
+     $ip_add= $fetched['ip_address'];
      $store_firewall= ($level_firewall + 1);
      $store_bypasser= ($level_bypasser + 1);
      $store_encryptor= ($level_encryptor + 1);

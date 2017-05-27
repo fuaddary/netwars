@@ -6,6 +6,32 @@
     }
     include_once"query.php";
 
+    include_once "db_config.php"; 
+     $username=$_SESSION['login_user'];
+    // $user=$_GET['login_user'];
+     /*$query_user="SELECT * FROM users WHERE username='$username'";
+     $result=mysqli_query($bd,$query_user);
+     $fetched=mysqli_fetch_array($result);
+     
+     $level_firewall= $fetched['firewall_lvl'];
+     $level_bypasser= $fetched['bypasser_lvl'];
+     $level_encryptor= $fetched['encrypter_lvl'];
+     $level_decryptor= $fetched['pw_cracker_lvl'];
+     $ip= $fetched['ip_address'];
+     $store_firewall= ($level_firewall + 1);
+     $store_bypasser= ($level_bypasser + 1);
+     $store_encryptor= ($level_encryptor + 1);
+     $store_decryptor= ($level_decryptor + 1);
+     $cost_tools= "SELECT `bypasser`.`cost_bypasser`, `firewall`.`cost_firewall`, `pw_cracker`.`cost_pw_cracker`, `encrypter`.`cost_encrypter`
+                    FROM `users`
+                    INNER JOIN `bypasser` ON `bypasser`.`lvl_bypasser` = '$store_bypasser'
+                    INNER JOIN `firewall` ON `firewall`.`lvl_firewall` = '$store_firewall'
+                    INNER JOIN `pw_cracker` ON `pw_cracker`.`lvl_pw_cracker` = '$store_decryptor'
+                    INNER JOIN `encrypter` ON `encrypter`.`lvl_encrypter` = '$store_encryptor'
+                    WHERE `users`.`username` = '$username'";
+    $cost= mysqli_query($bd,$cost_tools);
+    $fetched_cost=mysqli_fetch_array($cost);*/
+
 
 ?>
 <!DOCTYPE html>
@@ -450,7 +476,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Firewall</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Firewall level : <?php echo $fetched['firewall_lvl'] ?> </strong></span>
+                                            <span><strong>Firewall level : <?php echo $level_firewall ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -465,7 +491,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Bypasser</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Bypasser level : <?php echo $fetched['bypasser_lvl'] ?> </strong></span>
+                                            <span><strong>Bypasser level : <?php echo $level_bypasser ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +506,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">encrypter</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Encrypter level : <?php echo $fetched['encrypter_lvl'] ?> </strong></span>
+                                            <span><strong>Encrypter level : <?php echo $level_encryptor ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -495,7 +521,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Decrypter</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Decrypter level : <?php echo $fetched['pw_cracker_lvl'] ?> </strong></span>
+                                            <span><strong>Decrypter level : <?php echo $level_decryptor ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -525,7 +551,7 @@
                                 <h2>Project Title</h2>
                                 <hr class="star-primary">
                                 <div>
-                                    <h3> my ip : <?php echo $fetched['ip_address'];  ?> </h3>
+                                    <h3> my ip : <?php echo $ip_add?> </h3>
 
                                 </div>
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
