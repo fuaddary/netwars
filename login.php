@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include_once 'db_config.php';
 if(isset($_POST["register-submit"])){
     $sql="CALL sp_register('".$_POST["username"]."', '".$_POST["email"]."', '".$_POST["password"]."')";
@@ -11,9 +12,11 @@ if(isset($_POST["login-submit"])){
     $var = mysqli_query($bd,$sql);
     
     if(mysqli_num_rows($var) > 0){
-        while($row = mysqli_fetch_assoc($var)){
-            if ( $row["id"] ){
-                header("location: home.php");
+        while($row = mysqli_fetch_array($var)){
+            if ( $row['id']==0 ){
+            	$_SESSION['login_user']=$row['username'];
+            	
+                header("location: menu.php");
             }
             else {
                 ?>

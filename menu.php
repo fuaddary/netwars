@@ -1,4 +1,9 @@
-<?php include_once "dbconf.php"; ?>
+<?php 
+    session_start();
+    include_once "db_config.php"; 
+     $username=$_SESSION['login_user'];
+    // $user=$_GET['login_user'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +71,7 @@
             <div class="collapse navbar-collapse" id="navbarExample">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-address-book-o"></i> Dr.Fu</a>
+                        <a class="nav-link" href="#"><i class="fa fa-address-book-o"></i> <?php echo $username?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-dollar"></i> 1000</a>
