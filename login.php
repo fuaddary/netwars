@@ -19,6 +19,8 @@ if(isset($_POST["login-submit"])){
                 header("location: menu.php");
             }
             else {
+
+            	header("login.php")
                 ?>
                 <script>
                     alert ('password/username salah');

@@ -1,5 +1,9 @@
 <?php 
     session_start();
+    session_regenerate_id();
+    if(!isset($_SESSION['login_user'])){
+        header("Location:index.php");
+    }
     include_once "db_config.php"; 
      $username=$_SESSION['login_user'];
     // $user=$_GET['login_user'];
@@ -80,7 +84,7 @@
                         
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Logout</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </li>
                 </ul>
             </div>
