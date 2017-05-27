@@ -33,7 +33,7 @@
                 <span class="skills">Cyber war has just begin. Play now and beat everyone!</span>
             </div>
                 <div class="col-lg-8 offset-lg-2 text-center">
-                    <a href="login.php" class="btn btn-lg btn-outline">
+                    <a href="menu.php" class="btn btn-lg btn-outline">
                         Play Now
                     </a>
             </div>

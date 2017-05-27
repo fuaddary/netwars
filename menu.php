@@ -2,7 +2,7 @@
     session_start();
     session_regenerate_id();
     if(!isset($_SESSION['login_user'])){
-        header("Location:index.php");
+        header("Location:login.php");
     }
     include_once "db_config.php"; 
      $username=$_SESSION['login_user'];
@@ -260,7 +260,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                         <button type="submit" class="btn btn-primary">ENTER</button>
+                                         <a href="enter.php"><button type="submit" class="btn btn-primary">ENTER</button></a>
                                     </li>
                                 </ul>
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -292,20 +292,20 @@
                                             <div class="input-group" style="padding-bottom: 25px;">
                                                 <input type="text" class="form-control" placeholder="Search IP">
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-default" type="button">PING</button>
+                                                    <a href="ping.php"><button class="btn btn-default" type="button">PING</button></a>
                                                 </span>
                                                 <span style="padding-left: 20px;">
-                                                    <button class="btn btn-success" type="button">SCAN</button>
+                                                    <a href="scan.php"><button class="btn btn-success" type="button">SCAN</button></a>
                                                 </span>
                                                 </span>
                                             </div>
 
 <div class="list-group col-sm-12" style="padding: 0px;">
-  <a href="#" class="list-group-item"  style="text-align: left;"" >
+  <div href="#" class="list-group-item"  style="text-align: left;"" >
       <span class="col-sm-5"> IP Address : xxx.xxx.xxx.xxx</span>
       <span class="col-sm-5"> Firewall lv : xx</span>
-      <button class="btn btn-danger">BYPASS</button>
-  </a>
+      <a href="bypass.php"> <button class="btn btn-danger">BYPASS</button> </a>
+  </div>
 </div>
 
 
@@ -335,6 +335,7 @@
                                 <h2>STORE</h2>
                                 <hr class="star-primary">
                                 <!-- Content -->
+                                <form method="get" action="buy.php">
                                 <div class="media">
                                   <div class="media-left media-middle">
                                     <a href="#">
@@ -348,7 +349,7 @@
                                             <span style="padding-left: 100px;"><strong>cost : 1000</strong></span> 
                                         </div>
                                         <div align="right">
-                                            <button class="btn btn-success" type="button">buy</button>
+                                            <button class="btn btn-success" type="submit" name="buy" value="1">buy</button>
                                         </div>
                                     </div>
                                 </div>
@@ -367,7 +368,7 @@
                                             <span style="padding-left: 100px;"><strong>cost : 2000</strong></span> 
                                         </div>
                                         <div align="right">
-                                            <button class="btn btn-success" type="button">buy</button>
+                                            <button class="btn btn-success" type="submit" name="buy" value="2">buy</button>
                                         </div>
                                     </div>
                                 </div>
@@ -386,7 +387,7 @@
                                             <span style="padding-left: 100px;"><strong>cost : 500</strong></span> 
                                         </div>
                                         <div align="right">
-                                            <button class="btn btn-success" type="button">buy</button>
+                                            <button class="btn btn-success" type="submit" name="buy" value="3">buy</button>
                                         </div>
                                     </div>
                                 </div>
@@ -405,12 +406,12 @@
                                             <span style="padding-left: 100px;"><strong>cost : 1000</strong></span> 
                                         </div>
                                         <div align="right">
-                                            <button class="btn btn-success" type="button">buy</button>
+                                            <button class="btn btn-success" type="submit" name="buy" value="4">buy</button>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Content -->
-
+                                 </form>
 
                                 
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
