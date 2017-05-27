@@ -4,9 +4,9 @@
     if(!isset($_SESSION['login_user'])){
         header("Location:login.php");
     }
-    include_once "db_config.php"; 
-     $username=$_SESSION['login_user'];
-    // $user=$_GET['login_user'];
+    include_once"query.php";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +78,7 @@
                         <a class="nav-link" href="#"><i class="fa fa-address-book-o"></i> <?php echo $username?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-dollar"></i> 1000</a>
+                        <a class="nav-link" href="#"><i class="fa fa-dollar"></i> <?php echo $fetched['usable_money']?></a>
                     </li><li class="nav-item">
                         <a class="nav-link" href="#"><div class="portfolio-link" href="#helpModal" data-toggle="modal">Help</div></a>
                         
@@ -345,8 +345,8 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Firewall</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Firewall level : 01 </strong></span>
-                                            <span style="padding-left: 100px;"><strong>cost : 1000</strong></span> 
+                                            <span><strong>Firewall level : <?php echo $store_firewall?> </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : <?php echo $fetched_cost['cost_firewall'] ?></strong></span> 
                                         </div>
                                         <div align="right">
                                             <button class="btn btn-success" type="submit" name="buy" value="1">buy</button>
@@ -364,8 +364,8 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Bypasser</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Bypasser level : 01 </strong></span>
-                                            <span style="padding-left: 100px;"><strong>cost : 2000</strong></span> 
+                                            <span><strong>Bypasser level : <?php echo $store_bypasser ?> </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : <?php echo $fetched_cost['cost_bypasser'] ?></strong></span> 
                                         </div>
                                         <div align="right">
                                             <button class="btn btn-success" type="submit" name="buy" value="2">buy</button>
@@ -383,8 +383,8 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">encrypter</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Encrypter level : 01 </strong></span>
-                                            <span style="padding-left: 100px;"><strong>cost : 500</strong></span> 
+                                            <span><strong>Encrypter level : <?php echo $store_encryptor ?> </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : <?php echo $fetched_cost['cost_encrypter'] ?></strong></span> 
                                         </div>
                                         <div align="right">
                                             <button class="btn btn-success" type="submit" name="buy" value="3">buy</button>
@@ -402,8 +402,8 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Decrypter</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Decrypter level : 01 </strong></span>
-                                            <span style="padding-left: 100px;"><strong>cost : 1000</strong></span> 
+                                            <span><strong>Decrypter level : <?php echo $store_decryptor ?> </strong></span>
+                                            <span style="padding-left: 100px;"><strong>cost : <?php echo $fetched_cost['cost_pw_cracker'] ?></strong></span> 
                                         </div>
                                         <div align="right">
                                             <button class="btn btn-success" type="submit" name="buy" value="4">buy</button>
@@ -447,7 +447,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Firewall</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Firewall level : 01 </strong></span>
+                                            <span><strong>Firewall level : <?php echo $fetched['firewall_lvl'] ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -462,7 +462,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Bypasser</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Bypasser level : 01 </strong></span>
+                                            <span><strong>Bypasser level : <?php echo $fetched['bypasser_lvl'] ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -477,7 +477,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">encrypter</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Encrypter level : 01 </strong></span>
+                                            <span><strong>Encrypter level : <?php echo $fetched['encrypter_lvl'] ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -492,7 +492,7 @@
                                     <div class="media-body" style="padding-top: 20px;">
                                         <h5 class="media-heading" align="left">Decrypter</h5> 
                                         <div style="text-align: left;">
-                                            <span><strong>Decrypter level : 01 </strong></span>
+                                            <span><strong>Decrypter level : <?php echo $fetched['pw_cracker_lvl'] ?> </strong></span>
                                         </div>
                                     </div>
                                 </div>
@@ -522,7 +522,7 @@
                                 <h2>Project Title</h2>
                                 <hr class="star-primary">
                                 <div>
-                                    <h3> my ip : xxx.xxx.xxx.xxx </h3>
+                                    <h3> my ip : <?php echo $fetched['ip_address'];  ?> </h3>
 
                                 </div>
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
