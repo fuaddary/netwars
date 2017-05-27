@@ -15,7 +15,7 @@ if(isset($_POST["login-submit"])){
         while($row = mysqli_fetch_array($var)){
             if ( $row['id']==0 ){
             	$_SESSION['login_user']=$row['username'];
-            	
+            	// $_SESSION['iki']=$row['ip_address'];
                 header("location: menu.php");
             }
             else {
