@@ -280,16 +280,25 @@
                                 <ul class="list-inline item-details">
                                     <li><h5>Scan for IP :</h5>
 
-                                            <div class="input-group">
+                                            <div class="input-group" style="padding-bottom: 25px;">
                                                 <input type="text" class="form-control" placeholder="Search IP">
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                                    <button class="btn btn-default" type="button">PING</button>
                                                 </span>
                                                 <span style="padding-left: 20px;">
                                                     <button class="btn btn-success" type="button">SCAN</button>
                                                 </span>
                                                 </span>
                                             </div>
+
+<div class="list-group col-sm-12" style="padding: 0px;">
+  <a href="#" class="list-group-item"  style="text-align: left;"" >
+      <span class="col-sm-5"> IP Address : xxx.xxx.xxx.xxx</span>
+      <span class="col-sm-5"> Firewall lv : xx</span>
+      <button class="btn btn-danger">BYPASS</button>
+  </a>
+</div>
+
 
                                     </li>
                                 </ul>
@@ -416,24 +425,69 @@
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2">
                             <div class="modal-body">
-                                <h2>Project Title</h2>
+                                <h2>My Application</h2>
                                 <hr class="star-primary">
-                                <img class="img-fluid img-centered" src="img/portfolio/safe.png" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                    </li>
-                                </ul>
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/firewall.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">Firewall</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Firewall level : 01 </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/bypasser.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">Bypasser</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Bypasser level : 01 </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/encrypter.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">encrypter</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Encrypter level : 01 </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <!-- Content -->
+                                <div class="media">
+                                  <div class="media-left media-middle">
+                                    <a href="#">
+                                      <img class="media-object" src="img/portfolio/decrypter.png" alt="..." style="width: 120px; padding-right: 10px" >
+                                    </a>
+                                    </div>
+                                    <div class="media-body" style="padding-top: 20px;">
+                                        <h5 class="media-heading" align="left">Decrypter</h5> 
+                                        <div style="text-align: left;">
+                                            <span><strong>Decrypter level : 01 </strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>
@@ -457,22 +511,10 @@
                             <div class="modal-body">
                                 <h2>Project Title</h2>
                                 <hr class="star-primary">
-                                <img class="img-fluid img-centered" src="img/portfolio/submarine.png" alt="">
-                                <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                <ul class="list-inline item-details">
-                                    <li>Client:
-                                        <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                    </li>
-                                    <li>Date:
-                                        <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                    </li>
-                                    <li>Service:
-                                        <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                    </li>
-                                </ul>
+                                <div>
+                                    <h3> my ip : xxx.xxx.xxx.xxx </h3>
+
+                                </div>
                                 <button class="btn btn-success" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                             </div>
                         </div>
@@ -495,19 +537,28 @@
                      <!-- About Section -->
                     <section class="success" id="about">
                         <div class="container">
-                            <h2 class="text-center">About</h2>
+                            <h2 class="text-center">HELP</h2>
                             <hr class="star-light">
                             <div class="row">
-                                <div class="col-lg-4 offset-lg-2">
-                                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-                                </div>
-                                <div class="col-lg-4">
-                                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-                                </div>
-                                <div class="col-lg-8 offset-lg-2 text-center">
-                                    <a href="#" class="btn btn-lg btn-outline">
-                                        <i class="fa fa-download"></i> Download Theme
-                                    </a>
+                                <div class="col-lg-12">
+                                    <ol style="text-align: left">
+                                        <li>
+                                            Pemain akan diberikan sejumlah uang awal sebesar xxxx, namun para pemain dapat mendapatkan uang tambahan melalui player lain.
+                                        </li>
+                                        <li>
+                                            Caranya dengan melakukan <strong>SCAN</strong>IP kemudian melakukan <strong>BYPASS</strong> pada IP target. setelah itu proses bypass akan masuk pada <strong>PROCESS</strong>.
+                                        </li>
+                                        <li>
+                                            Waktu tunggu tergantung seberapa bagus aplikasi anda. anda dapat melakukan upgrade aplikasi pada <strong>STORE</strong>
+                                        </li>
+                                        <li>
+                                            Setelah process selesai akan muncul status apakah process anda berhasil atau tidak, apabila berhasil, maka anda dapat melakukan <strong>HACK</strong> pada target. Tingkat keberhasilan juga tergantung seberaba bagus aplikasi anda.
+                                        </li>
+                                        <li>
+                                            Proses sama seperti <strong>BYPASS</strong> namun ketika proses ini berhasil anda dapat mengabil uang target anda.</p>
+                                        </li>
+                                    </ol>
+                                    <p>
                                 </div>
                             </div>
                         </div>
