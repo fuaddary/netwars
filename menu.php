@@ -7,7 +7,10 @@
     include_once"query.php";
 
     include_once "db_config.php"; 
-     $username=$_SESSION['login_user'];
+    $username=$_SESSION['login_user'];
+    
+    $_REQUEST['uang']=$fetched['usable_money
+    '];
     // $user=$_GET['login_user'];
      /*$query_user="SELECT * FROM users WHERE username='$username'";
      $result=mysqli_query($bd,$query_user);
@@ -331,8 +334,8 @@
 ?>
 <div class="list-group col-sm-12" style="padding: 0px;">
   <div href="#" class="list-group-item"  style="text-align: left;"" >
-      <span class="col-sm-5" id="result_ip"> IP Address : <?php include_once 'scan.php'; echo $ipip; ?></span>
-      <span class="col-sm-5"> Firewall lv : xx</span>
+      <span class="col-sm-5" id="result_ip"> IP Address : </span>
+      <span class="col-sm-5" id="result_lvl"> Firewall lv : </span>
       <a href="bypass.php"> <button class="btn btn-danger">BYPASS</button> </a>
   </div>
 </div>
@@ -364,7 +367,8 @@
                                 <h2>STORE</h2>
                                 <hr class="star-primary">
                                 <!-- Content -->
-                                <form method="get" action="buy.php">
+                                <form method="POST" action="buy.php">
+                                    
                                 <div class="media">
                                   <div class="media-left media-middle">
                                     <a href="#">
@@ -662,7 +666,9 @@
                         success: function(result){
                             console.log("sukses");
                             console.log(result);
-                            $('#result_ip').html("IP Address: " + result);
+                            var result =$.parseJSON(output);
+                            $('#result_ip').html("IP Address: " + result[0]);
+                            $('#result_lvl').html("Level : " + result[1]);
                         },
                         fail: function() {
                             console.log("gagal");

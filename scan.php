@@ -20,7 +20,8 @@ $hasil=mysqli_query($bd,"SELECT ip_address, firewall_lvl FROM users where ip_add
 
 $fetched=mysqli_fetch_array($hasil);
 $ipip = $fetched['ip_address'];
-echo $ipip;
+$firewall_lvl = $fetched['firewall_lvl'];
+echo json_encode(array($ipip,$firewall_lvl));
 // if(!isset($fetched)){
 // 	echo '<div class="list-group col-sm-12" style="padding: 0px;">';
 //     echo '<div href="#" class="list-group-item"  style="text-align: left;">';
